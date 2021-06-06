@@ -9,6 +9,13 @@ For the style transfer, we use a pretrained VGG19 model on Imagenet, as used by 
 
 ## Style loss
 
+## Content loss
+
+## Style transfer results
+Example of style transfer results for the classes headphone, water lilly, emu and wildcat are shown below. Here we see that the style transfer is done successfully in most cases. However, for style 2 we see that the original image is less recognizable.
+![Screenshot from 2021-06-06 13-27-57](https://user-images.githubusercontent.com/61514183/120922729-105b1f00-c6cb-11eb-94fa-36b9345598b6.png)
+![Screenshot from 2021-06-06 13-28-05](https://user-images.githubusercontent.com/61514183/120922730-118c4c00-c6cb-11eb-9830-7f39891ea8e0.png)
+
 
 
 # Results

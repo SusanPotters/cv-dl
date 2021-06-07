@@ -15,8 +15,7 @@ style_layers = ['block1_conv1',
                 'block2_conv1',
                 'block3_conv1', 
                 'block4_conv1', 
-                'block5_conv1'
-               ]
+                'block5_conv1']
  ```
 The idea is that we have a content and style image that we both want to match, and transform a base input image such that it matches the content of the content image and the style of the style image. Hence, the total loss is simply the addition of the content and style loss. 
 

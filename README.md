@@ -51,6 +51,15 @@ Examples of style transfer results for the classes headphone, water lilly, emu a
 # 4. Results
 ## Style transfer vs Original
 
+|   	|  VGG16 - average test accuracy	|   VGG19 - average test accuracy	|
+|---	|---	|---	|
+|  Original 	|  0.901 	|  0.905 	|
+|  Style 1 	|  0.914 	|  0.928 	|
+|  Style 2 	|  0.890 	|  0.899 	|
+|  Style 3	|   0.914	|   0.931	|
+|  All styles	|  0.933 	|  0.916 	|
+
+
 ## Data augmentation vs Original
 
 ## Style transfer and data augmentation vs Original

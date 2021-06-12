@@ -1,8 +1,8 @@
-# Introduction
+# 1. Introduction
 The goal of this project is to investigate if using style transfer as data augmentation to enlarge the dataset is beneficial and if so, if it more beneficial than enlarging your dataset via normal augmentations.
 ...
 
-# Style transfer
+# 2. Style transfer
 Style transfer can be used to compose images in the style of another image, or painting. This specific technique was first introduced by Gatys et al. [2]. It uses a style image (for example of a painting), and an input image, after which it tries to blend these two images together such that the input image is styled like the style image. For this project, three different style images were taken into account, which are shown below.
 ![all_styles](https://user-images.githubusercontent.com/61514183/120921464-14377300-c6c4-11eb-8544-5c1fc0fe08f1.jpg)
 The first and second paintings are more abstract works, where the first painting shows a lot of rounded edges and lines and the second painting contains a lot of rectangles. The third painting is a more classic work of Van Gogh. The goal of this project is to compare the different abstract works to the classical work and see if one sort of painting proves to be more beneficial.
@@ -36,7 +36,7 @@ style_loss = tf.reduce_mean(tf.square(gram_style - gram_target))
 
 ## Dataset
 As the goal of this project is to investigate if using style transfer can be used to enlarge a small dataset and thus increase performance, we had to choose a dataset that is relatively small and does not have a lot of images per class. Therefore, the Caltech 101 dataset was used for this project; originally it contains 101 classes, where most classes contain about fifty iimages [3]. The original idea was to use the full dataset for style transfer. However, as using style transfer on each image took roughly 2 to 4 minutes, only twelve classes were used in the end. Random images from the twelve different classes are shown below.
-![all](https://user-images.githubusercontent.com/61514183/121050588-fb5cb980-c7b8-11eb-886c-b4f247de0482.jpg)
+![classes](https://user-images.githubusercontent.com/61514183/121782674-165d6e00-cbab-11eb-9624-2515f6296192.png)
 
 ## Generating stylized images 
 The total loss that was used was a combination of the earlier mentioned style and content loss. Then, gradient descent was run to transform the original into a stylized image that matches the style of the style image and content of the content image. We use the Adam optimizer to minimize the loss and run for 1000 iterations. The image with the lowest combined loss is saved into the data directory.
@@ -46,11 +46,18 @@ Examples of style transfer results for the classes headphone, water lilly, emu a
 ![Screenshot from 2021-06-06 13-27-57](https://user-images.githubusercontent.com/61514183/120922729-105b1f00-c6cb-11eb-94fa-36b9345598b6.png)
 ![Screenshot from 2021-06-06 13-28-05](https://user-images.githubusercontent.com/61514183/120922730-118c4c00-c6cb-11eb-9830-7f39891ea8e0.png)
 
-# Results
+# 3. Models
 
-# Discussion
+# 4. Results
+## Style transfer vs Original
 
-# Conclusion
+## Data augmentation vs Original
+
+## Style transfer and data augmentation vs Original
+
+# 5. Discussion
+
+# 6. Conclusion
 
 # References
 [1] Zheng, X., Chalasani, T., Ghosal, K., Lutz, S., & Smolic, A. (2019). Stada: Style transfer as data augmentation. arXiv preprint arXiv:1909.01056.

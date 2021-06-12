@@ -48,7 +48,7 @@ Examples of style transfer results for the classes headphone, water lilly, emu a
 ![Screenshot from 2021-06-06 13-27-57](https://user-images.githubusercontent.com/61514183/120922729-105b1f00-c6cb-11eb-94fa-36b9345598b6.png)
 ![Screenshot from 2021-06-06 13-28-05](https://user-images.githubusercontent.com/61514183/120922730-118c4c00-c6cb-11eb-9830-7f39891ea8e0.png)
 
-# 3. Augmentation
+# 3. Traditinal augmentation
 
 # 4. Models
 Two models were used for the analysis: VGG16 and VGG19. Both were pretrained on Imagenet and were further trained on the datasets that were created. The models were trained for 70 epochs, but early stopping was used if the model did not improve for too many epochs; the patience was set to 10. A learning rate of 0.0001 was used, in combination with the SGD optimizer. 
@@ -77,7 +77,7 @@ Below table shows the test accuracies for VGG16 and V6619 for the original datas
 |  Original 	|  0.901 	|  0.905 	|
 |  Traditional data augmentation 	|  0.928 	|  0.922 	|
 
-Above table shows that there is an increase in performance when using traditional data augmentation, which are comparable to the performance increases when using 
+Above table shows that there is an increase in performance when using traditional data augmentation, which are comparable to the performance increases when using style transfer for data augmentation. 
 
 ## Combined methods vs Original
 

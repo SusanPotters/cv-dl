@@ -3,7 +3,7 @@ The goal of this project is to investigate if using style transfer as data augme
 ...
 
 # 2. Style transfer
-Style transfer can be used to compose images in the style of another image, or painting. This specific technique was first introduced by Gatys et al. [2]. It uses a style image (for example of a painting), and an input image, after which it tries to blend these two images together such that the input image is styled like the style image. For this project, three different style images were taken into account, which are shown below.
+Style transfer can be used to compose images in the style of another image, or painting. This specific technique was first introduced by Gatys et al. [3]. It uses a style image (for example of a painting), and an input image, after which it tries to blend these two images together such that the input image is styled like the style image. For this project, three different style images were taken into account, which are shown below.
 ![all_styles](https://user-images.githubusercontent.com/61514183/120921464-14377300-c6c4-11eb-8544-5c1fc0fe08f1.jpg)
 The first and second paintings are more abstract works, where the first painting shows a lot of rounded edges and lines and the second painting contains a lot of rectangles. The third painting is a more classic work of Van Gogh. The goal of this project is to compare the different abstract works to the classical work and see if one sort of painting proves to be more beneficial.
 
@@ -35,7 +35,7 @@ style_loss = tf.reduce_mean(tf.square(gram_style - gram_target))
 ```
 
 ## Dataset
-As the goal of this project is to investigate if using style transfer can be used to enlarge a small dataset and thus increase performance, we had to choose a dataset that is relatively small and does not have a lot of images per class. Therefore, the Caltech 101 dataset was used for this project; originally it contains 101 classes, where most classes contain about fifty iimages [3]. The original idea was to use the full dataset for style transfer. However, as using style transfer on each image took roughly 2 to 4 minutes, only twelve classes were used in the end. Random images from the twelve different classes are shown below. 
+As the goal of this project is to investigate if using style transfer can be used to enlarge a small dataset and thus increase performance, we had to choose a dataset that is relatively small and does not have a lot of images per class. Therefore, the Caltech 101 dataset was used for this project; originally it contains 101 classes, where most classes contain about fifty iimages [4]. The original idea was to use the full dataset for style transfer. However, as using style transfer on each image took roughly 2 to 4 minutes, only twelve classes were used in the end. Random images from the twelve different classes are shown below. 
 ![classes](https://user-images.githubusercontent.com/61514183/121782674-165d6e00-cbab-11eb-9624-2515f6296192.png)
 
 70 percent of the original dataset consisting of 12 classes was used for training, and thus was augmented. The remaining 30 percent was used for testing purposes.
@@ -86,8 +86,10 @@ Above table shows that there is an increase in performance when using traditiona
 # 7. Conclusion
 
 # References
-[1] Zheng, X., Chalasani, T., Ghosal, K., Lutz, S., & Smolic, A. (2019). Stada: Style transfer as data augmentation. arXiv preprint arXiv:1909.01056.
+[1] Geirhos, R., Rubisch, P., Michaelis, C., Bethge, M., Wichmann, F. A., & Brendel, W. (2018). ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness. arXiv preprint arXiv:1811.12231.
 
-[2] Gatys, L. A., Ecker, A. S., & Bethge, M. (2015). A neural algorithm of artistic style. arXiv preprint arXiv:1508.06576.
+[2] Zheng, X., Chalasani, T., Ghosal, K., Lutz, S., & Smolic, A. (2019). Stada: Style transfer as data augmentation. arXiv preprint arXiv:1909.01056.
 
-[3] L. Fei-Fei, R. Fergus and P. Perona. Learning generative visual models from few training examples: an incremental Bayesian approach tested on 101 object categories. IEEE. CVPR 2004, Workshop on Generative-Model Based Vision. 2004
+[3] Gatys, L. A., Ecker, A. S., & Bethge, M. (2015). A neural algorithm of artistic style. arXiv preprint arXiv:1508.06576.
+
+[4] L. Fei-Fei, R. Fergus and P. Perona. Learning generative visual models from few training examples: an incremental Bayesian approach tested on 101 object categories. IEEE. CVPR 2004, Workshop on Generative-Model Based Vision. 2004

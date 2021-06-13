@@ -1,6 +1,8 @@
 # 1. Introduction
-The goal of this project is to investigate if using style transfer as data augmentation to enlarge the dataset is beneficial and if so, if it more beneficial than enlarging your dataset via normal augmentations.
-...
+Recent work has suggested that ImageNet-trained CNNs are biased towards recognising textures, instead of shapes [1]. Moreover, they demonstrated that the same architecture that can learn a texture-based representation on ImageNet, is also able to learn a shape-based representation on a stylized version of ImageNet. It provides an additional robustness to image distortions, given rise to the idea of using style transfer for data augmentation, which was also investigated by Zheng et al. [2]. 
+
+The goal of this project is to investigate if using style transfer as data augmentation to enlarge the dataset is beneficial and if so, if it more beneficial than enlarging your dataset via normal data augmentations.
+
 
 # 2. Style transfer
 Style transfer can be used to compose images in the style of another image, or painting. This specific technique was first introduced by Gatys et al. [3]. It uses a style image (for example of a painting), and an input image, after which it tries to blend these two images together such that the input image is styled like the style image. For this project, three different style images were taken into account, which are shown below.
@@ -48,7 +50,7 @@ Examples of style transfer results for the classes headphone, water lilly, emu a
 ![Screenshot from 2021-06-06 13-27-57](https://user-images.githubusercontent.com/61514183/120922729-105b1f00-c6cb-11eb-94fa-36b9345598b6.png)
 ![Screenshot from 2021-06-06 13-28-05](https://user-images.githubusercontent.com/61514183/120922730-118c4c00-c6cb-11eb-9830-7f39891ea8e0.png)
 
-# 3. Traditinal augmentation
+# 3. Traditional augmentation
 
 # 4. Models
 Two models were used for the analysis: VGG16 and VGG19. Both were pretrained on Imagenet and were further trained on the datasets that were created. The models were trained for 70 epochs, but early stopping was used if the model did not improve for too many epochs; the patience was set to 10. A learning rate of 0.0001 was used, in combination with the SGD optimizer. 

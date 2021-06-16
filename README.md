@@ -80,7 +80,10 @@ Below table shows the test accuracies for VGG16 and V6619 for the original datas
 |   	|  VGG16 - average test accuracy	|   VGG19 - average test accuracy	|
 |---	|---	|---	|
 |  Original 	|  0.901 	|  0.905 	|
-|  Traditional data augmentation 	|  0.928 	|  0.922 	|
+|  Data augmentation 1 	|  0.928 	|  0.922 	|
+|  Data augmentation 5	|  0.933 	|  0.924 	|
+
+![VGG16-and19-augmentations](https://user-images.githubusercontent.com/61514183/122212248-e9110880-cea7-11eb-9036-20bf5fe3d6a1.png)
 
 Above table shows that there is an increase in performance when using traditional data augmentation, which are comparable to the performance increases when using style transfer for data augmentation. 
 

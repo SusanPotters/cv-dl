@@ -51,6 +51,7 @@ Examples of style transfer results for the classes headphone, water lilly, emu a
 ![Screenshot from 2021-06-06 13-28-05](https://user-images.githubusercontent.com/61514183/120922730-118c4c00-c6cb-11eb-9830-7f39891ea8e0.png)
 
 # 3. Traditional augmentation
+![augm](https://user-images.githubusercontent.com/61514183/122179074-7728c700-ce87-11eb-829d-d94b6b36a400.png)
 
 # 4. Models
 Two models were used for the analysis: VGG16 and VGG19. Both were pretrained on Imagenet and were further trained on the datasets that were created. The models were trained for 70 epochs, but early stopping was used if the model did not improve for too many epochs; the patience was set to 10. A learning rate of 0.0001 was used, in combination with the SGD optimizer. 

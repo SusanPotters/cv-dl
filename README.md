@@ -114,18 +114,22 @@ Below table and figure show results for both methods combined.
 |  Data augmentation 1 + Style 1 	|  0.937 	|  0.920 	|
 |  Data augmentation 1 + Style 2 	|  0.878 	|  0.918 	|
 |  Data augmentation 1 + Style 3 	|  0.939 	|  0.926 	|
-|  Data augmentation 1 + All styles 	|  0.935 	|   	|
-|  Data augmentation 5 + All styles 	|   	|   	|
+|  Data augmentation 1 + All styles 	|  0.935 	|  0.939 	|
+|  Data augmentation 5 + All styles 	|   0.958	|  0.941 	|
 
-
+![VGG16-and19-augmentations-styles](https://user-images.githubusercontent.com/61514183/122279955-ec78b400-cee8-11eb-869c-85e209adeab8.png)
 
 # 6. Discussion
 - use faster style transfer
 - use different amounts of styling and see what it does
 - do more runs so we can do t-tests and see if significant results
+ 
+ #TODO
 
 # 7. Conclusion
 - something about abstract/not abstract
+
+ #TODO
 
 # References
 [1] Geirhos, R., Rubisch, P., Michaelis, C., Bethge, M., Wichmann, F. A., & Brendel, W. (2018). ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness. arXiv preprint arXiv:1811.12231.

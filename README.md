@@ -90,7 +90,7 @@ Below table shows the test accuracy results for both models. Results are shown f
 
 ![VGG16-and19-styles](https://user-images.githubusercontent.com/61514183/121886768-1fb71980-cd16-11eb-818b-e7e4e849c5cd.png)
 
-We see that style 1 and 3 give improvements both models, whereas style 2 did not improve the test accuracy. When using all styles, there are improvements compared to only using the original training set. However, it should be noted that for VGG16 the performance increase is a little higher than for VGG19. For VGG16 the combined method yields higher results than for the seperate styles, while this is not the case for VGG19.
+We see that style 1 and 3 give improvements for both models, whereas style 2 did not improve the test accuracy. When using all styles, there are improvements compared to only using the original training set. However, it should be noted that for VGG16 the performance increase is a little higher than for VGG19. For VGG16 the combined method yields higher results than for the seperate styles, while this is not the case for VGG19.
 
 ## Traditional data augmentation vs Original
 Below table shows the test accuracies for VGG16 and V6619 for the original dataset and the augmented datasets, where the training dataset is doubled. Moreover, we investigated what the influence is of additional augmentations, where for each image in the training set five different augmentated images are generated. 
@@ -103,10 +103,10 @@ Below table shows the test accuracies for VGG16 and V6619 for the original datas
 
 ![VGG16-and19-augmentations](https://user-images.githubusercontent.com/61514183/122212248-e9110880-cea7-11eb-9036-20bf5fe3d6a1.png)
 
-Above table and figure show that there is an increase in performance when using traditional data augmentation, which are comparable to the performance increases when using style transfer for data augmentation. Using more data augmentations gives an additional performance boost, however the performance increase is relatively small. Moreover, the data augmentations have more benefit for the VGG16 network than the VGG19 network.
+Above table and figure show that there is an increase in performance when using traditional data augmentation, which is comparable to the performance increases when using style transfer for data augmentation. Using more data augmentations gives an additional performance boost, however the performance increase is relatively small. Moreover, the data augmentations are more beneficial for the VGG16 network than the VGG19 network.
 
 ## Combined methods vs Original
-
+Below table and figure show results for both methods combined.
 
 |   	|  VGG16 - average test accuracy	|   VGG19 - average test accuracy	|
 |---	|---	|---	|

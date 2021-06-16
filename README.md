@@ -5,7 +5,7 @@ By Meltem Coroz and Susan Potters
 # 1. Introduction
 Recent work has suggested that ImageNet-trained CNNs are biased towards recognising textures, instead of shapes [1]. Moreover, they demonstrated that the same architecture that can learn a texture-based representation on ImageNet, is also able to learn a shape-based representation on a stylized version of ImageNet. Training on stylized images provides an additional robustness to image distortions, giving rise to the idea of using style transfer for data augmentation, which was also investigated by Zheng et al. [2]. 
 
-The goal of this project is to investigate if using style transfer as data augmentation to enlarge the dataset is beneficial and if so, if it more beneficial than enlarging your dataset via normal data augmentations. In order to achive this, a selection of classes of the Caltech 101 dataset is used for style transfer to enlarge the dataset. Additionally, traditional data augmentation is used as another way to enlarge the dataset. Two models are trained on the resulting datasets, for which the results can be compared. Lastly, we investigate the additional benefit of using traditional data augmentations in combination with style transfer.
+The goal of this project is to investigate if using style transfer as data augmentation to enlarge the dataset is beneficial and if so, if it more beneficial than enlarging your dataset via normal data augmentations. In order to achieve this, a selection of classes of the Caltech 101 dataset is used for style transfer to enlarge the dataset. Additionally, traditional data augmentation is used as another way to enlarge the dataset. Two models are trained on the resulting datasets, for which the results can be compared. Lastly, we investigate the additional benefit of using traditional data augmentations in combination with style transfer.
 
 
 # 2. Style transfer
@@ -23,10 +23,9 @@ style_layers = ['block1_conv1',
                 'block4_conv1', 
                 'block5_conv1']
  ```
-The idea is that we have a content and style image that we both want to match, and transform a base input image such that it matches the content of the content image and the style of the style image. Hence, the total loss is simply the addition of the content and style loss. 
 
 ## Content loss
-Initlially we pass the network the content and style image, from which it produces a stylized image. We can retrieve the style and content features from the layers that we defined above. We first do this for the original content image, after which we run the content image through the model and again retrieve the content features. The content loss here is defined as the euclidian distance between the content features of the input (content) image and the image that was generated. We can write this in code, where base_content represents the stylized image, and target represents the original content image. The goal here is to minimize the content loss. 
+Initlially we pass the network the content and style image, from which it produces a stylized image. We can retrieve the style and content features from the layers that we defined above. We first do this for the original content image, after which we run the content image through the model and again retrieve the content features of the stylized image. The content loss here is defined as the euclidian distance between the content features of the input (content) image and the stylized image that was generated. We can write this in code, where base_content represents the stylized image, and target represents the original content image. The goal here is to minimize the content loss. 
 
 ```
 content_loss = tf.reduce_mean(tf.square(base_content - target))
@@ -41,7 +40,7 @@ style_loss = tf.reduce_mean(tf.square(gram_style - gram_target))
 ```
 
 ## Dataset
-As the goal of this project is to investigate if using style transfer can be used to enlarge a small dataset and thus increase performance, we had to choose a dataset that is relatively small and does not have a lot of images per class. Therefore, the Caltech 101 dataset was used for this project; originally it contains 101 classes, where most classes contain about fifty iimages [4]. The original idea was to use the full dataset for style transfer. However, as using style transfer on each image took roughly 2 to 4 minutes, only twelve classes were used in the end. Random images from the twelve different classes are shown below. 
+As the goal of this project is to investigate if style transfer can be used to enlarge a small dataset and thus increase performance, we had to choose a dataset that is relatively small and does not have a lot of images per class. Therefore, the Caltech 101 dataset was used for this project; originally it contains 101 classes, where most classes contain about fifty iimages [4]. The original idea was to use the full dataset for style transfer. However, as using style transfer on each image took roughly 2 to 4 minutes, only twelve classes were used in the end. Random images from the twelve different classes are shown below. 
 ![classes](https://user-images.githubusercontent.com/61514183/121782674-165d6e00-cbab-11eb-9624-2515f6296192.png)
 
 70 percent of the original dataset consisting of 12 classes was used for training, and thus was augmented. The remaining 30 percent was used for testing purposes.
@@ -55,13 +54,28 @@ Examples of style transfer results for the classes headphone, water lilly, emu a
 ![Screenshot from 2021-06-06 13-28-05](https://user-images.githubusercontent.com/61514183/120922730-118c4c00-c6cb-11eb-9830-7f39891ea8e0.png)
 
 # 3. Traditional augmentation
+Additionally, traditionl data augmentation was used. Below examples for the classes elephant, chandelier, pizza and cougar body are shown. The augmentations consisted of combinations of random rotations, horizontal and vertical shifts, zooming, horizontal flips, shear and changes in brighness. #TODO
+
+```
+datagen = ImageDataGenerator(
+        rotation_range=10, # rotation
+        width_shift_range=0.2, # horizontal shift
+        height_shift_range=0.2, # vertical shift
+        zoom_range=0.2, # zoom
+        horizontal_flip=True, # horizontal flip
+        brightness_range=[0.2,1.2],
+        shear_range=0.2,
+        fill_mode = 'nearest',
+        channel_shift_range=20.0)
+```
+
 ![augm](https://user-images.githubusercontent.com/61514183/122179074-7728c700-ce87-11eb-829d-d94b6b36a400.png)
 
 # 4. Models
 Two models were used for the analysis: VGG16 and VGG19. Both were pretrained on Imagenet and were further trained on the datasets that were created. The models were trained for 70 epochs, but early stopping was used if the model did not improve for too many epochs; the patience was set to 10. A learning rate of 0.0001 was used, in combination with the SGD optimizer. 
 
 # 5. Results
-The above mentioned models were each trained three times for the different datasets, after which results were averaged. This was done such that more significant conclusions can be extracted from the data.
+The above mentioned models were each trained three times for the different datasets, after which results were averaged. After doing the first tests it was noticed that there were only slight increases or decreases, so multiple runs were done such that more significant conclusions could be extracted from the data.
 
 ## Style transfer vs Original
 Below table shows the test accuracy results for both models. Results are shown for the original dataset, combinations of the original dataset and each style (so here the training dataset was multiplied by 2) and a combination of the original dataset and all three styles (so here the training dataset was multiplied by 4).
@@ -111,6 +125,7 @@ Above table and figure show that there is an increase in performance when using 
 - do more runs so we can do t-tests and see if significant results
 
 # 7. Conclusion
+- something about abstract/not abstract
 
 # References
 [1] Geirhos, R., Rubisch, P., Michaelis, C., Bethge, M., Wichmann, F. A., & Brendel, W. (2018). ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness. arXiv preprint arXiv:1811.12231.

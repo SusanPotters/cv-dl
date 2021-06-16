@@ -1,6 +1,6 @@
 By Meltem Coroz and Susan Potters
 
-Link to code
+[Link to code](https://github.com/SusanPotters/CV-DL-style-transfer)
 
 # 1. Introduction
 Recent work has suggested that ImageNet-trained CNNs are biased towards recognising textures, instead of shapes [1]. Moreover, they demonstrated that the same architecture that can learn a texture-based representation on ImageNet, is also able to learn a shape-based representation on a stylized version of ImageNet. Training on stylized images provides an additional robustness to image distortions, giving rise to the idea of using style transfer for data augmentation, which was also investigated by Zheng et al. [2]. 

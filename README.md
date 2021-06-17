@@ -133,12 +133,11 @@ Also, we could have lowered the amount of iterations for generating the style tr
 
 
 # 7. Conclusion
-Generally, the use of basic augmentation and augmentation based on style transfer both improve the test accuracies for our dataset. However, the style chosen seems to be important for style transfer; style 2 performs even worse than training on the original dataset.
+Generally, the use of basic augmentation and augmentation based on style transfer both improve the test accuracies for our dataset. However, the style chosen seems to be important for style transfer; style 2 performs even worse than training on only the original dataset. Moreover, using traditional data augmentations is more computationally efficient, while giving similar results to style transfer.
 
 Basic augmentations seem to improve the results, but the strongest improvements are achieved by using both style transfer and basic augmentations. The effect of these improvements seem to be bigger for the VGG16 network, which is a less deep network compared to VGG19. This suggests that using these augmentations can especially be beneficial for shallower networks.
 
 Still, the significance of the results are unclear as we were unable to do t-tests on the results due to low amount of test runs.
-
 
 # References
 [1] Geirhos, R., Rubisch, P., Michaelis, C., Bethge, M., Wichmann, F. A., & Brendel, W. (2018). ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness. arXiv preprint arXiv:1811.12231.

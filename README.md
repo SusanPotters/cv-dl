@@ -54,7 +54,7 @@ Examples of style transfer results for the classes headphone, water lilly, emu a
 ![Screenshot from 2021-06-06 13-28-05](https://user-images.githubusercontent.com/61514183/120922730-118c4c00-c6cb-11eb-9830-7f39891ea8e0.png)
 
 # 3. Traditional augmentation
-Additionally, traditionl data augmentation was used. Below examples for the classes elephant, chandelier, pizza and cougar body are shown. The augmentations consisted of combinations of random rotations, horizontal and vertical shifts, zooming, horizontal flips, shear and changes in brighness.
+Additionally, traditionl data augmentation was used. Below examples for the classes elephant, chandelier, pizza and cougar body are shown. The augmentations consisted of combinations of random rotations, horizontal and vertical shifts, zooming, horizontal flips, shear and changes in brightness.
 
 ```
 datagen = ImageDataGenerator(
@@ -103,7 +103,7 @@ Below table shows the test accuracies for VGG16 and VGG19 for the original datas
 
 ![VGG16-and19-augmentations](https://user-images.githubusercontent.com/61514183/122212248-e9110880-cea7-11eb-9036-20bf5fe3d6a1.png)
 
-Above table and figure show that there is an increase in performance when using traditional data augmentation, which is comparable to the performance increases when using style transfer for data augmentation. Using more data augmentations gives an additional performance boost, however the performance increase is relatively small. Moreover, the data augmentations are more beneficial for the VGG16 network than the VGG19 network.
+The figure and table above show that there is an increase in performance when using traditional data augmentation, which is comparable to the performance increases when using style transfer for data augmentation. Using more data augmentations gives an additional performance boost, however the performance increase is relatively small. Moreover, the data augmentations are more beneficial for the VGG16 network than the VGG19 network.
 
 ## Combined methods vs Original
 Below table and figure show results for both methods combined.
@@ -119,15 +119,21 @@ Below table and figure show results for both methods combined.
 
 ![VGG16-and19-augmentations-styles](https://user-images.githubusercontent.com/61514183/122279955-ec78b400-cee8-11eb-869c-85e209adeab8.png)
 
+The result show that the combination of normal augmentations and style transfer are the most beneficial for the VGG16 network for one augmentation and styles 1 and 3. It can also be seen that augmentation and style 2 combination is generally the worst, but still better than the original for VGG19 network. The biggest performance gain is achieved for VGG16 by using 5 augmentations and all styles, which is a gain of 6.3%.
 # 6. Discussion
-- use faster style transfer
-- use different amounts of styling and see what it does
-- do more runs so we can do t-tests and see if significant results
- 
- #TODO
+Unfortunately we were quite restricted in performing a lot of tests due to low GPU capacity. 
+Style transfer generation was slow for the GPU we were able to use. We could have searched for faster methods for style transfer. This limited us to using only three different styles. Using different amounts of (abstract and non abstract) styles could have showed us more of a pattern.
+Also, we were limited in the amount of test runs. With more runs, we could have done t-tests to see if the improvements are significant.
+
+There is also a potential in improving the results by using different types of augmentation, we have used basic augmentations such as random rotations, horizontal and vertical shifts, zooming, horizontal flips, shear and changes in brightness.
+
+Also, we could have lowered the amount of iterations for generating the style transfer images to see the effect on accuracy scores. Some images, especially the images generated with style 2 became somewhat unrecognizable for a human. This style also performed the worst in both networks.
+
 
 # 7. Conclusion
-- something about abstract/not abstract
+Generally, the use of basic augmentation and augmentation based on style transfer both improve the test accuracies for our dataset. However, the style chosen seems to be important for style transfer; style 2 performs even worse than training on the original dataset.
+Basic augmentations seem to improve the results, but the strongest improvements are achieved by using both style transfer and basic augmentations.
+
 
  #TODO
 

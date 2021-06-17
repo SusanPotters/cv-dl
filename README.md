@@ -122,7 +122,9 @@ Below table and figure show results for both methods combined.
 The results show that the combination of normal augmentations and style transfer are the most beneficial for the VGG16 network for one augmentation and styles 1 and 3. It can also be seen that augmentation and style 2 combination is generally the worst, but still better than the original for VGG19 network. The biggest performance gain is achieved for VGG16 by using 5 augmentations and all styles, which is a gain of 6.3%.
 # 6. Discussion
 Unfortunately we were quite restricted in performing a lot of tests due to low GPU capacity. 
-Style transfer generation was slow for the GPU we were able to use. We could have searched for faster methods for style transfer. This limited us to using only three different styles. Using different amounts of (abstract and non abstract) styles could have showed us more of a pattern.
+Style transfer generation was slow for the GPU we were able to use. We could have searched for faster methods for style transfer. 
+
+The low GPU performance limited us to using only three different styles. Using different amounts of (abstract and non abstract) styles could have showed us more of a pattern.
 Also, we were limited in the amount of test runs. With more runs, we could have done t-tests to see if the improvements are significant.
 
 There is also a potential in improving the results by using different types of augmentation, we have used basic augmentations such as random rotations, horizontal and vertical shifts, zooming, horizontal flips, shear and changes in brightness.
@@ -132,7 +134,10 @@ Also, we could have lowered the amount of iterations for generating the style tr
 
 # 7. Conclusion
 Generally, the use of basic augmentation and augmentation based on style transfer both improve the test accuracies for our dataset. However, the style chosen seems to be important for style transfer; style 2 performs even worse than training on the original dataset.
+
 Basic augmentations seem to improve the results, but the strongest improvements are achieved by using both style transfer and basic augmentations. The effect of these improvements seem to be bigger for the VGG16 network, which is a less deep network compared to VGG19. This suggests that using these augmentations can especially be beneficial for shallower networks.
+
+Still, the significance of the results are unclear as we were unable to do t-tests on the results due to low amount of test runs.
 
 
 # References

@@ -54,7 +54,7 @@ Examples of style transfer results for the classes headphone, water lilly, emu a
 ![Screenshot from 2021-06-06 13-28-05](https://user-images.githubusercontent.com/61514183/120922730-118c4c00-c6cb-11eb-9830-7f39891ea8e0.png)
 
 # 3. Traditional augmentation
-Additionally, traditionl data augmentation was used. Below examples for the classes elephant, chandelier, pizza and cougar body are shown. The augmentations consisted of combinations of random rotations, horizontal and vertical shifts, zooming, horizontal flips, shear and changes in brighness. #TODO
+Additionally, traditionl data augmentation was used. Below examples for the classes elephant, chandelier, pizza and cougar body are shown. The augmentations consisted of combinations of random rotations, horizontal and vertical shifts, zooming, horizontal flips, shear and changes in brighness.
 
 ```
 datagen = ImageDataGenerator(

@@ -78,7 +78,7 @@ Two models were used for the analysis: VGG16 and VGG19. Both were pretrained on 
 The above mentioned models were each trained three times for the different datasets, after which results were averaged. After doing the first tests it was noticed that there were only slight increases or decreases, so multiple runs were done such that more significant conclusions could be extracted from the data.
 
 ## Style transfer vs Original
-Below table shows the test accuracy results for both models. Results are shown for the original dataset, combinations of the original dataset and each style (so here the training dataset was multiplied by 2) and a combination of the original dataset and all three styles (so here the training dataset was multiplied by 4).
+Below table shows the test accuracy results for both models. Results are shown for the original dataset, combinations of the original dataset and each style (so the amount of training samples is 2x more than the original) and a combination of the original dataset and all three styles (amount of training samples is 4x more than the original).
 
 |   	|  VGG16 - average test accuracy	|   VGG19 - average test accuracy	|
 |---	|---	|---	|

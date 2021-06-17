@@ -75,7 +75,7 @@ datagen = ImageDataGenerator(
 Two models were used for the analysis: VGG16 and VGG19. Both were pretrained on Imagenet and were further trained on the datasets that were created. The models were trained for 70 epochs, but early stopping was used if the model did not improve for too many epochs; the patience was set to 10. A learning rate of 0.0001 was used, in combination with the SGD optimizer. 
 
 # 5. Results
-The above mentioned models were each trained three times for the different datasets, after which results were averaged. After doing the first tests it was noticed that there were only slight increases or decreases, so multiple runs were done such that more significant conclusions could be extracted from the data.
+The above mentioned models were each trained three times for the different datasets, after which results were averaged. After doing the first tests it was noticed that there were only slight increases or decreases, so three runs were done for each combination such that more significant conclusions could be extracted from the data.
 
 ## Style transfer vs Original
 Below table shows the test accuracy results for both models. Results are shown for the original dataset, combinations of the original dataset and each style (so the amount of training samples is 2x more than the original) and a combination of the original dataset and all three styles (amount of training samples is 4x more than the original).

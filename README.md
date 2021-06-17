@@ -25,7 +25,7 @@ style_layers = ['block1_conv1',
  ```
 
 ## Content loss
-Initlially we pass the network the content and style image, from which it produces a stylized image. We can retrieve the style and content features from the layers that we defined above. We first do this for the original content image, after which we run the content image through the model and again retrieve the content features of the stylized image. The content loss here is defined as the euclidian distance between the content features of the input (content) image and the stylized image that was generated. We can write this in code, where base_content represents the stylized image, and target represents the original content image. The goal here is to minimize the content loss. 
+Initlially we pass the network the content and style image, from which it produces a stylized image. We can retrieve the style and content features from the layers that we defined above. We first do this for the original content image, after which we run the content image through the model and again retrieve the content features of the stylized image. The content loss here is defined as the Euclidian distance between the content features of the input (content) image and the stylized image that was generated. We can write this in code, where base_content represents the stylized image, and target represents the original content image. The goal here is to minimize the content loss. 
 
 ```
 content_loss = tf.reduce_mean(tf.square(base_content - target))

@@ -90,7 +90,7 @@ Below table shows the test accuracy results for both models. Results are shown f
 
 ![VGG16-and19-styles](https://user-images.githubusercontent.com/61514183/121886768-1fb71980-cd16-11eb-818b-e7e4e849c5cd.png)
 
-We see that style 1 and 3 give improvements for both models, whereas style 2 did not improve the test accuracy. When using all styles, there are improvements compared to only using the original training set. However, it should be noted that for VGG16 the performance increase is a little higher than for VGG19. For VGG16 the combined method yields higher results than for the seperate styles, while this is not the case for VGG19.
+We see that style 1 and 3 give improvements for both models, whereas style 2 did not improve the test accuracy. When using all styles, there are improvements compared to only using the original training set. However, it should be noted that for VGG16 the performance increase is a little higher than for VGG19. For VGG16, the combined method yields higher results than for the seperate styles, while this is not the case for VGG19.
 
 ## Traditional data augmentation vs Original
 Below table shows the test accuracies for VGG16 and V6619 for the original dataset and the augmented datasets, where the training dataset is doubled. Moreover, we investigated what the influence is of additional augmentations, where for each image in the training set five different augmentated images are generated. 

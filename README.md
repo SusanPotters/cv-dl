@@ -119,7 +119,7 @@ Below table and figure show results for both methods combined.
 
 ![VGG16-and19-augmentations-styles](https://user-images.githubusercontent.com/61514183/122279955-ec78b400-cee8-11eb-869c-85e209adeab8.png)
 
-The result show that the combination of normal augmentations and style transfer are the most beneficial for the VGG16 network for one augmentation and styles 1 and 3. It can also be seen that augmentation and style 2 combination is generally the worst, but still better than the original for VGG19 network. The biggest performance gain is achieved for VGG16 by using 5 augmentations and all styles, which is a gain of 6.3%.
+The results show that the combination of normal augmentations and style transfer are the most beneficial for the VGG16 network for one augmentation and styles 1 and 3. It can also be seen that augmentation and style 2 combination is generally the worst, but still better than the original for VGG19 network. The biggest performance gain is achieved for VGG16 by using 5 augmentations and all styles, which is a gain of 6.3%.
 # 6. Discussion
 Unfortunately we were quite restricted in performing a lot of tests due to low GPU capacity. 
 Style transfer generation was slow for the GPU we were able to use. We could have searched for faster methods for style transfer. This limited us to using only three different styles. Using different amounts of (abstract and non abstract) styles could have showed us more of a pattern.
@@ -132,10 +132,8 @@ Also, we could have lowered the amount of iterations for generating the style tr
 
 # 7. Conclusion
 Generally, the use of basic augmentation and augmentation based on style transfer both improve the test accuracies for our dataset. However, the style chosen seems to be important for style transfer; style 2 performs even worse than training on the original dataset.
-Basic augmentations seem to improve the results, but the strongest improvements are achieved by using both style transfer and basic augmentations.
+Basic augmentations seem to improve the results, but the strongest improvements are achieved by using both style transfer and basic augmentations. The effect of these improvements seem to be bigger for the VGG16 network, which is a less deep network compared to VGG19. This suggests that using these augmentations can especially be beneficial for shallower networks.
 
-
- #TODO
 
 # References
 [1] Geirhos, R., Rubisch, P., Michaelis, C., Bethge, M., Wichmann, F. A., & Brendel, W. (2018). ImageNet-trained CNNs are biased towards texture; increasing shape bias improves accuracy and robustness. arXiv preprint arXiv:1811.12231.
